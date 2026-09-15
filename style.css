@@ -2,6 +2,1776 @@
     box-sizing: border-box;
 }
 
+/* Final inner-page tokens: the landing poster is the visual source of truth. */
+:root {
+    --bg: #f2efe9;
+    --bg-2: #f2efe9;
+    --panel: #f8f6f1;
+    --panel-2: #eaf0f0;
+    --panel-3: #d8d2c6;
+    --line: #d8d2c6;
+    --ink: #1f1c18;
+    --ink-strong: #1f1c18;
+    --muted: #6f685e;
+    --soft: #8a6d4b;
+    --accent: #8a6d4b;
+    --accent-strong: #8a6d4b;
+    --metal: #a6b3b3;
+    --metal-dark: #657171;
+    --shadow: none;
+    --inset-shadow: none;
+    --vessel-radius: 2px;
+    --classic-pattern: none;
+}
+
+body:not(:has(.landing-poster)) {
+    background: var(--bg);
+    color: var(--ink);
+}
+
+body:not(:has(.landing-poster)) .page-shell {
+    max-width: 1380px;
+    padding: 48px 32px 96px;
+}
+
+body:not(:has(.landing-poster)) .page-header {
+    padding: 0 0 48px;
+    border: 0;
+    border-bottom: 1px solid var(--line);
+    border-radius: 0;
+    background: transparent;
+    box-shadow: none;
+}
+
+body:not(:has(.landing-poster)) .eyebrow {
+    margin-bottom: 24px;
+    padding: 0;
+    border: 0;
+    border-radius: 0;
+    background: transparent;
+    box-shadow: none;
+    color: var(--accent);
+    font-size: 12px;
+    letter-spacing: 0.15em;
+}
+
+body:not(:has(.landing-poster)) .page-header h1,
+body:not(:has(.landing-poster)) .page-header .brand-home-link {
+    color: var(--ink);
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: clamp(3.5rem, 6vw, 5.3rem);
+    font-weight: 400;
+    letter-spacing: -0.07em;
+    line-height: 0.9;
+}
+
+body:not(:has(.landing-poster)) .page-header .subtitle {
+    max-width: 720px;
+    margin-top: 20px;
+    color: var(--accent);
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: clamp(1.05rem, 1.6vw, 1.25rem);
+    font-style: italic;
+    line-height: 1.35;
+}
+
+body:not(:has(.landing-poster)) .header-badge {
+    padding: 0 0 7px;
+    border: 0;
+    border-bottom: 1px solid var(--accent);
+    border-radius: 0;
+    background: transparent;
+    box-shadow: none;
+    color: var(--accent);
+    font-size: 12px;
+    letter-spacing: 0.15em;
+}
+
+body:not(:has(.landing-poster)) .toolbar {
+    margin-top: 64px;
+    padding: 0;
+}
+
+body:not(:has(.landing-poster)) .collection-search {
+    width: min(100%, 560px);
+    padding: 0;
+    border: 0;
+    border-bottom: 1px solid var(--line);
+    border-radius: 0;
+    background: transparent;
+    box-shadow: none;
+}
+
+body:not(:has(.landing-poster)) .search-icon {
+    color: var(--accent);
+    font-size: 1.2rem;
+}
+
+body:not(:has(.landing-poster)) #searchInput {
+    padding: 12px 0 11px;
+    color: var(--ink);
+    font-family: Arial, sans-serif;
+    font-size: 15px;
+}
+
+body:not(:has(.landing-poster)) #searchInput::placeholder {
+    color: var(--muted);
+}
+
+body:not(:has(.landing-poster)) .filter-buttons {
+    gap: 24px;
+    margin: 28px 0 0;
+}
+
+body:not(:has(.landing-poster)) .filter-buttons button {
+    padding: 0 0 7px;
+    border: 0;
+    border-bottom: 1px solid transparent;
+    border-radius: 0;
+    background: transparent;
+    color: var(--muted);
+    box-shadow: none;
+    font-size: 12px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+}
+
+body:not(:has(.landing-poster)) .filter-buttons button:hover,
+body:not(:has(.landing-poster)) .filter-buttons button:active,
+body:not(:has(.landing-poster)) .filter-buttons button.active {
+    transform: none;
+    border-bottom-color: var(--accent);
+    background: transparent;
+    color: var(--accent);
+    box-shadow: none;
+}
+
+body:not(:has(.landing-poster)) .filter-buttons button:focus-visible {
+    outline: 1px solid var(--accent);
+    outline-offset: 5px;
+}
+
+body:not(:has(.landing-poster)) .results-bar {
+    padding: 64px 0 20px;
+    border-bottom: 1px solid var(--line);
+}
+
+body:not(:has(.landing-poster)) #collectionCount,
+body:not(:has(.landing-poster)) .results-note {
+    color: var(--accent);
+    font-family: Arial, sans-serif;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.15em;
+}
+
+body:not(:has(.landing-poster)) .collection-container {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    column-count: unset;
+    column-gap: 32px;
+    row-gap: 64px;
+    padding-top: 48px;
+}
+
+body:not(:has(.landing-poster)) .collection-card {
+    display: block;
+    width: 100%;
+    margin: 0;
+    border: 0;
+    border-bottom: 1px solid var(--line);
+    border-radius: 0;
+    background: transparent;
+    box-shadow: none;
+    overflow: visible;
+}
+
+body:not(:has(.landing-poster)) .collection-card:hover {
+    transform: none;
+    border-color: var(--line);
+    box-shadow: none;
+}
+
+body:not(:has(.landing-poster)) .collection-card-image,
+body:not(:has(.landing-poster)) .collection-card-image img {
+    border-radius: 0;
+}
+
+body:not(:has(.landing-poster)) .collection-card-image {
+    aspect-ratio: var(--image-ratio, 4 / 5);
+    background: #eaf0f0;
+    border: 1px solid var(--line);
+}
+
+body:not(:has(.landing-poster)) .collection-card-content {
+    padding: 20px 0 22px;
+    background: transparent;
+    color: var(--muted);
+}
+
+body:not(:has(.landing-poster)) .collection-card h2,
+body:not(:has(.landing-poster)) .collection-card h2 a {
+    margin: 0;
+    color: var(--ink);
+    font-family: "Noto Serif SC", "Songti SC", "STSong", Georgia, serif;
+    font-size: 1.2rem;
+    font-weight: 400;
+    letter-spacing: 0;
+    line-height: 1.35;
+}
+
+body:not(:has(.landing-poster)) .collection-card-english {
+    margin: 7px 0 18px;
+    color: var(--accent);
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 0.9rem;
+    font-style: italic;
+    line-height: 1.35;
+}
+
+body:not(:has(.landing-poster)) .collection-card-meta {
+    display: flex;
+    gap: 8px;
+    margin: 6px 0 0;
+    color: var(--ink);
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 0.9rem;
+    line-height: 1.45;
+}
+
+body:not(:has(.landing-poster)) .collection-card-meta span {
+    min-width: 118px;
+    color: var(--muted);
+    font-family: Arial, sans-serif;
+    font-size: 10px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+}
+
+body:not(:has(.landing-poster)) .empty-collection-state {
+    border: 0;
+    border-top: 1px solid var(--line);
+    border-bottom: 1px solid var(--line);
+    border-radius: 0;
+    color: var(--muted);
+}
+
+body.detail-page .detail-navigation {
+    margin: 32px 0 0;
+}
+
+body.detail-page #back-to-Collection {
+    margin: 0;
+    padding: 0 0 7px;
+    border: 0;
+    border-bottom: 1px solid var(--accent);
+    border-radius: 0;
+    background: transparent;
+    box-shadow: none;
+    color: var(--accent);
+    font-family: Arial, sans-serif;
+    font-size: 12px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+}
+
+body.detail-page #back-to-Collection:hover {
+    transform: none;
+    color: var(--ink);
+}
+
+body.detail-page .object-detail {
+    display: grid;
+    grid-template-columns: minmax(0, 1.2fr) minmax(320px, 0.8fr);
+    gap: 64px;
+    margin-top: 64px;
+}
+
+body.detail-page .object-image {
+    width: auto;
+}
+
+body.detail-page .main-image {
+    height: min(680px, 58vw);
+    border: 1px solid var(--line);
+    border-radius: 2px;
+    background: #eaf0f0;
+    box-shadow: none;
+}
+
+body.detail-page .main-image img {
+    transform: scale(1.18);
+}
+
+body.detail-page .object-info {
+    width: auto;
+    min-height: 0;
+    padding: 12px 0 0 40px;
+    border: 0;
+    border-left: 1px solid var(--line);
+    border-radius: 0;
+    background: transparent;
+    box-shadow: none;
+}
+
+body.detail-page .object-info h1 {
+    margin: 0;
+    color: var(--ink);
+    font-family: "Noto Serif SC", "Songti SC", "STSong", Georgia, serif;
+    font-size: clamp(2rem, 3.4vw, 3.5rem);
+    font-weight: 400;
+    letter-spacing: 0;
+    line-height: 1.12;
+}
+
+body.detail-page .object-info h2 {
+    margin: 12px 0 48px;
+    color: var(--accent);
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: clamp(1.05rem, 1.7vw, 1.35rem);
+    font-style: italic;
+    font-weight: 400;
+    line-height: 1.35;
+}
+
+body.detail-page .object-info p {
+    display: grid;
+    grid-template-columns: 130px minmax(0, 1fr);
+    gap: 16px;
+    margin: 0;
+    padding: 13px 0;
+    border-top: 1px solid var(--line);
+    color: var(--ink);
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 1rem;
+    line-height: 1.45;
+}
+
+body.detail-page .object-info p strong {
+    color: var(--muted);
+    font-family: Arial, sans-serif;
+    font-size: 10px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+}
+
+body.detail-page .dimensions-value {
+    display: block;
+}
+
+body.detail-page .object-description {
+    margin-top: 96px;
+    padding: 32px 0 0;
+    border: 0;
+    border-top: 1px solid var(--line);
+    border-radius: 0;
+    background: transparent;
+    box-shadow: none;
+}
+
+/* Keep the four fully visible collection cards in focus while dimming the rest. */
+body:not(:has(.landing-poster)) .collection-card.is-visible.is-muted {
+    opacity: 0.4;
+}
+
+body:not(:has(.landing-poster)) .header-badge,
+body:not(:has(.landing-poster)) .results-note {
+    margin-left: auto;
+    text-align: right;
+}
+
+/* Final collection composition: full-bleed header and four-card reveal rhythm. */
+body:not(:has(.landing-poster)) .page-header {
+    width: calc(100% + 64px);
+    margin-left: -32px;
+    margin-right: -32px;
+    padding: 38px 64px 34px;
+    border: 1px solid #d8d2c6;
+    border-radius: 0;
+    background: linear-gradient(135deg, #fbfaf6 0%, #eeeae1 100%);
+    box-shadow: 0 14px 28px rgba(88, 70, 48, 0.08), inset 0 1px 0 rgba(255, 255, 255, 0.76);
+}
+
+body:not(:has(.landing-poster)) .toolbar {
+    margin-top: 32px;
+}
+
+body:not(:has(.landing-poster)) .filter-buttons {
+    margin-top: 18px;
+}
+
+body:not(:has(.landing-poster)) .results-bar {
+    padding-top: 34px;
+}
+
+body:not(:has(.landing-poster)) .collection-container {
+    padding-top: 34px;
+}
+
+body:not(:has(.landing-poster)) .collection-card {
+    border: 1px solid #dfe5df;
+    background: rgba(242, 246, 243, 0.34);
+}
+
+body:not(:has(.landing-poster)) .collection-card-content {
+    padding: 18px 14px 18px;
+    border-top: 1px solid #dfe5df;
+}
+
+body:not(:has(.landing-poster)) .collection-card-meta {
+    padding-top: 7px;
+    border-top: 1px solid rgba(216, 210, 198, 0.7);
+}
+
+body:not(:has(.landing-poster)) .collection-card-meta + .collection-card-meta {
+    margin-top: 0;
+}
+
+@media (max-width: 980px) {
+    body:not(:has(.landing-poster)) .page-header {
+        width: calc(100% + 56px);
+        margin-left: -28px;
+        margin-right: -28px;
+        padding-left: 56px;
+        padding-right: 56px;
+    }
+}
+
+@media (max-width: 640px) {
+    body:not(:has(.landing-poster)) .page-header {
+        width: calc(100% + 36px);
+        margin-left: -18px;
+        margin-right: -18px;
+        padding: 30px 36px 32px 36px;
+    }
+}
+
+body:not(:has(.landing-poster)) .inner-side-marker {
+    position: fixed;
+    top: 280px;
+    left: 0;
+    z-index: 20;
+}
+
+body:not(:has(.landing-poster)) .load-more-link {
+    display: flex;
+    position: relative;
+    z-index: 20;
+    width: fit-content;
+    margin-top: 48px;
+    margin-right: 0;
+    margin-left: auto;
+    padding: 12px 18px;
+    border: 1px solid #1f1c18;
+    border-radius: 0;
+    background: #1f1c18;
+    color: #f2efe9;
+    box-shadow: none;
+}
+
+body:not(:has(.landing-poster)) .load-more-link:hover {
+    border-color: #8a6d4b;
+    background: #8a6d4b;
+    color: #f2efe9;
+}
+
+body:not(:has(.landing-poster)) .inner-side-marker {
+    width: 34px;
+    min-height: 196px;
+    padding: 16px 8px;
+    background: #ffffff;
+    color: #1f1c18;
+    border: 1px solid #d8d2c6;
+}
+
+body:not(:has(.landing-poster)) .inner-side-marker a {
+    color: inherit;
+    text-decoration: none;
+}
+
+body:not(:has(.landing-poster)) .inner-side-marker span {
+    font-size: 9px;
+}
+
+@media (max-width: 640px) {
+    body:not(:has(.landing-poster)) .inner-side-marker {
+        position: static;
+        top: auto;
+        left: auto;
+    }
+}
+
+/* Collection motion and rhythm: final cascade. */
+body:not(:has(.landing-poster)) {
+    background: #e9eeeb;
+}
+
+body:not(:has(.landing-poster)) .inner-side-marker {
+    position: absolute;
+    top: 280px;
+    left: 0;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    width: 28px;
+    min-height: 176px;
+    padding: 14px 6px;
+    background: #1f1c18;
+    color: #f2efe9;
+}
+
+body:not(:has(.landing-poster)) .inner-side-marker span {
+    font-family: Arial, sans-serif;
+    font-size: 8px;
+    letter-spacing: 0.12em;
+    line-height: 1;
+    writing-mode: vertical-rl;
+}
+
+body:not(:has(.landing-poster)) .page-header,
+body:not(:has(.landing-poster)) .toolbar,
+body:not(:has(.landing-poster)) .results-bar,
+body:not(:has(.landing-poster)) .collection-container,
+body:not(:has(.landing-poster)) .load-more-link {
+    margin-left: 42px;
+}
+
+body:not(:has(.landing-poster)) .collection-container {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    column-gap: 28px;
+    row-gap: 56px;
+}
+
+body:not(:has(.landing-poster)) .collection-card:nth-child(4n + 2) {
+    margin-top: 28px;
+}
+
+body:not(:has(.landing-poster)) .collection-card:nth-child(4n) {
+    margin-top: 14px;
+}
+
+body:not(:has(.landing-poster)) .collection-card {
+    opacity: 0;
+    transform: translateY(9px);
+    transition: opacity 0.55s ease var(--reveal-delay), transform 0.55s ease var(--reveal-delay);
+}
+
+body:not(:has(.landing-poster)) .collection-card.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+body:not(:has(.landing-poster)) .collection-card.is-visible.is-muted {
+    opacity: 0.4;
+}
+
+body:not(:has(.landing-poster)) .collection-card-image {
+    position: relative;
+    overflow: hidden;
+    transition: border-color 0.25s ease, transform 0.25s ease;
+}
+
+body:not(:has(.landing-poster)) .collection-card-image img {
+    transition: transform 0.45s ease, filter 0.45s ease;
+    width: 100%;
+    height: 100%;
+    object-fit: cover !important;
+    object-position: 50% 50% !important;
+    transform: scale(1.2) !important;
+    transform-origin: center 50%;
+}
+
+body:not(:has(.landing-poster)) .collection-card:hover .collection-card-image {
+    border-color: #8a6d4b;
+    transform: translateY(-2px);
+}
+
+body:not(:has(.landing-poster)) .collection-card:hover .collection-card-image img {
+    filter: saturate(1.04);
+    transform: scale(1.55) !important;
+}
+
+body:not(:has(.landing-poster)) .collection-container {
+    display: block !important;
+    column-count: 4 !important;
+    column-gap: 28px !important;
+    column-fill: balance;
+}
+
+body:not(:has(.landing-poster)) .collection-card {
+    display: inline-block;
+    width: 100% !important;
+    height: auto !important;
+    min-height: 0 !important;
+    margin: 0 0 56px !important;
+    vertical-align: top;
+    break-inside: avoid;
+}
+
+body:not(:has(.landing-poster)) .collection-card-content {
+    height: auto;
+    min-height: 0;
+}
+
+body:not(:has(.landing-poster)) .collection-card:nth-child(4n + 2),
+body:not(:has(.landing-poster)) .collection-card:nth-child(4n) {
+    margin-top: 0 !important;
+}
+
+@media (max-width: 980px) {
+    body:not(:has(.landing-poster)) .collection-container {
+        column-count: 3 !important;
+    }
+}
+
+@media (max-width: 640px) {
+    body:not(:has(.landing-poster)) .collection-container {
+        column-count: 2 !important;
+        column-gap: 18px !important;
+    }
+}
+
+body:not(:has(.landing-poster)) .collection-card-english {
+    position: relative;
+    display: inline-block;
+}
+
+body:not(:has(.landing-poster)) .collection-card-english::after {
+    position: absolute;
+    right: 0;
+    bottom: -4px;
+    left: 0;
+    height: 1px;
+    background: #8a6d4b;
+    content: "";
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.3s ease;
+}
+
+body:not(:has(.landing-poster)) .collection-card:hover .collection-card-english::after {
+    transform: scaleX(1);
+}
+
+body:not(:has(.landing-poster)) .load-more-link {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    width: fit-content;
+    margin-top: 48px;
+    margin-right: 0;
+    margin-left: auto;
+    padding: 12px 18px;
+    border: 1px solid #1f1c18;
+    background: #1f1c18;
+    color: #f2efe9;
+    cursor: pointer;
+    font-family: Arial, sans-serif;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    position: relative;
+    z-index: 4;
+    clear: both;
+    text-transform: uppercase;
+}
+
+body:not(:has(.landing-poster)) .load-more-link:hover {
+    border-color: #8a6d4b;
+    background: #8a6d4b;
+    color: #f2efe9;
+}
+
+body:not(:has(.landing-poster)) .load-more-link[hidden] {
+    display: none;
+}
+
+@media (max-width: 980px) {
+    body:not(:has(.landing-poster)) .page-header,
+    body:not(:has(.landing-poster)) .toolbar,
+    body:not(:has(.landing-poster)) .results-bar,
+    body:not(:has(.landing-poster)) .collection-container,
+    body:not(:has(.landing-poster)) .load-more-link {
+        margin-left: 28px;
+    }
+
+    body:not(:has(.landing-poster)) .collection-container {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 640px) {
+    body:not(:has(.landing-poster)) .inner-side-marker {
+        position: static;
+        flex-direction: row;
+        width: auto;
+        min-height: 0;
+        margin: 0 0 24px;
+        padding: 10px 12px;
+    }
+
+    body:not(:has(.landing-poster)) .inner-side-marker span {
+        writing-mode: horizontal-tb;
+        font-size: 8px;
+    }
+
+    body:not(:has(.landing-poster)) .page-header,
+    body:not(:has(.landing-poster)) .toolbar,
+    body:not(:has(.landing-poster)) .results-bar,
+    body:not(:has(.landing-poster)) .collection-container,
+    body:not(:has(.landing-poster)) .load-more-link {
+        margin-left: 0;
+    }
+
+    body:not(:has(.landing-poster)) .collection-container {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        column-gap: 18px;
+        row-gap: 40px;
+    }
+
+    body:not(:has(.landing-poster)) .collection-card:nth-child(4n + 2),
+    body:not(:has(.landing-poster)) .collection-card:nth-child(4n) {
+        margin-top: 0;
+    }
+}
+
+/* Collection rhythm: a soft green editorial field with a measured stagger. */
+body:not(:has(.landing-poster)) {
+    background: #e9eeeb;
+}
+
+body:not(:has(.landing-poster)) .inner-side-marker {
+    position: absolute;
+    top: 280px;
+    left: 8px;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    width: 28px;
+    min-height: 176px;
+    padding: 14px 6px;
+    background: #1f1c18;
+    color: #f2efe9;
+}
+
+body:not(:has(.landing-poster)) .inner-side-marker span {
+    font-family: Arial, sans-serif;
+    font-size: 8px;
+    letter-spacing: 0.12em;
+    line-height: 1;
+    writing-mode: vertical-rl;
+}
+
+body:not(:has(.landing-poster)) .page-header,
+body:not(:has(.landing-poster)) .toolbar,
+body:not(:has(.landing-poster)) .results-bar,
+body:not(:has(.landing-poster)) .collection-container,
+body:not(:has(.landing-poster)) .load-more-link {
+    margin-left: 42px;
+}
+
+body:not(:has(.landing-poster)) .collection-container {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    column-gap: 28px;
+    row-gap: 56px;
+}
+
+body:not(:has(.landing-poster)) .collection-card:nth-child(4n + 2) {
+    margin-top: 28px;
+}
+
+body:not(:has(.landing-poster)) .collection-card:nth-child(4n) {
+    margin-top: 14px;
+}
+
+body:not(:has(.landing-poster)) .collection-card {
+    opacity: 0;
+    transform: translateY(9px);
+    transition: opacity 0.55s ease var(--reveal-delay), transform 0.55s ease var(--reveal-delay);
+}
+
+body:not(:has(.landing-poster)) .collection-card.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+body:not(:has(.landing-poster)) .collection-card-image {
+    position: relative;
+    overflow: hidden;
+    transition: border-color 0.25s ease, transform 0.25s ease;
+}
+
+body:not(:has(.landing-poster)) .collection-card-image img {
+    transition: transform 0.45s ease, filter 0.45s ease;
+}
+
+body:not(:has(.landing-poster)) .collection-card:hover .collection-card-image {
+    border-color: #8a6d4b;
+    transform: translateY(-2px);
+}
+
+body:not(:has(.landing-poster)) .collection-card:hover .collection-card-image img {
+    filter: saturate(1.04);
+    transform: scale(1.025);
+}
+
+body:not(:has(.landing-poster)) .collection-card-english {
+    position: relative;
+    display: inline-block;
+}
+
+body:not(:has(.landing-poster)) .collection-card-english::after {
+    position: absolute;
+    right: 0;
+    bottom: -4px;
+    left: 0;
+    height: 1px;
+    background: #8a6d4b;
+    content: "";
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.3s ease;
+}
+
+body:not(:has(.landing-poster)) .collection-card:hover .collection-card-english::after {
+    transform: scaleX(1);
+}
+
+body:not(:has(.landing-poster)) .load-more-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    margin-top: 64px;
+    padding: 0 0 8px;
+    border: 0;
+    border-bottom: 1px solid #8a6d4b;
+    background: transparent;
+    color: #8a6d4b;
+    cursor: pointer;
+    font-family: Arial, sans-serif;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+}
+
+body:not(:has(.landing-poster)) .load-more-link:hover {
+    color: #1f1c18;
+}
+
+body:not(:has(.landing-poster)) .load-more-link span {
+    font-size: 1.1rem;
+}
+
+body:not(:has(.landing-poster)) .load-more-link[hidden] {
+    display: none;
+}
+
+@media (max-width: 980px) {
+    body:not(:has(.landing-poster)) .page-header,
+    body:not(:has(.landing-poster)) .toolbar,
+    body:not(:has(.landing-poster)) .results-bar,
+    body:not(:has(.landing-poster)) .collection-container,
+    body:not(:has(.landing-poster)) .load-more-link {
+        margin-left: 28px;
+    }
+
+    body:not(:has(.landing-poster)) .collection-container {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 640px) {
+    body:not(:has(.landing-poster)) .inner-side-marker {
+        position: static;
+        flex-direction: row;
+        width: auto;
+        min-height: 0;
+        margin: 0 0 24px;
+        padding: 10px 12px;
+    }
+
+    body:not(:has(.landing-poster)) .inner-side-marker span {
+        writing-mode: horizontal-tb;
+        font-size: 8px;
+    }
+
+    body:not(:has(.landing-poster)) .page-header,
+    body:not(:has(.landing-poster)) .toolbar,
+    body:not(:has(.landing-poster)) .results-bar,
+    body:not(:has(.landing-poster)) .collection-container,
+    body:not(:has(.landing-poster)) .load-more-link {
+        margin-left: 0;
+    }
+
+    body:not(:has(.landing-poster)) .collection-container {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        column-gap: 18px;
+        row-gap: 40px;
+    }
+
+    body:not(:has(.landing-poster)) .collection-card:nth-child(4n + 2),
+    body:not(:has(.landing-poster)) .collection-card:nth-child(4n) {
+        margin-top: 0;
+    }
+}
+
+body:not(:has(.landing-poster)) .page-header a.brand-home-link:hover,
+body:not(:has(.landing-poster)) .page-header a.brand-home-link:active,
+body:not(:has(.landing-poster)) .page-header a.brand-home-link:focus-visible {
+    color: #8a6d4b !important;
+}
+
+/* Editorial masthead: a quiet frame around the inner pages. */
+body:not(:has(.landing-poster)) .page-shell {
+    position: relative;
+}
+
+body:not(:has(.landing-poster)) .page-shell::before,
+body:not(:has(.landing-poster)) .page-shell::after {
+    position: absolute;
+    top: 18px;
+    color: #8a6d4b;
+    font-family: Arial, sans-serif;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.15em;
+    line-height: 1;
+    text-transform: uppercase;
+}
+
+body:not(:has(.landing-poster)) .page-header {
+    position: relative;
+    margin-top: 22px;
+    padding: 38px 32px 34px;
+    border: 1px solid #d8d2c6;
+    border-radius: 2px;
+}
+
+body:not(:has(.landing-poster)) .page-header::before,
+body:not(:has(.landing-poster)) .page-header::after {
+    position: absolute;
+    bottom: 13px;
+    color: #8a6d4b;
+    font-family: Arial, sans-serif;
+    font-size: 9px;
+    letter-spacing: 0.15em;
+    line-height: 1;
+    text-transform: uppercase;
+}
+
+body:not(:has(.landing-poster)) .page-header .brand-home-link {
+    display: inline-block;
+    transition: color 0.2s ease;
+}
+
+body:not(:has(.landing-poster)) .page-header .brand-home-link:hover,
+body:not(:has(.landing-poster)) .page-header .brand-home-link:active,
+body:not(:has(.landing-poster)) .page-header .brand-home-link:focus-visible {
+    color: #8a6d4b;
+}
+
+body:not(:has(.landing-poster)) .page-header .brand-home-link:focus-visible {
+    outline: 1px solid #8a6d4b;
+    outline-offset: 5px;
+}
+
+body:not(:has(.landing-poster)) .collection-section {
+    position: relative;
+}
+
+body.detail-page .page-header .brand-home-link:hover,
+body.detail-page .page-header .brand-home-link:active,
+body.detail-page .page-header .brand-home-link:focus-visible {
+    color: #8a6d4b;
+}
+
+@media (max-width: 640px) {
+    body:not(:has(.landing-poster)) .page-shell::before,
+    body:not(:has(.landing-poster)) .page-shell::after {
+        top: 10px;
+        font-size: 8px;
+    }
+
+    body:not(:has(.landing-poster)) .page-shell::before {
+        left: 18px;
+    }
+
+    body:not(:has(.landing-poster)) .page-shell::after {
+        right: 18px;
+    }
+
+    body:not(:has(.landing-poster)) .page-header {
+        margin-top: 18px;
+        padding: 30px 18px 48px;
+    }
+
+    body:not(:has(.landing-poster)) .page-header::before {
+        left: 18px;
+        font-size: 8px;
+    }
+
+    body:not(:has(.landing-poster)) .page-header::after {
+        right: 18px;
+        font-size: 8px;
+    }
+}
+
+body.detail-page .object-description h2 {
+    margin: 0 0 18px;
+    color: var(--accent);
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 2rem;
+    font-style: italic;
+    font-weight: 400;
+}
+
+body.detail-page .object-description p {
+    max-width: 820px;
+    margin: 0;
+    color: var(--ink);
+    font-family: "Noto Serif SC", "Songti SC", "STSong", Georgia, serif;
+    font-size: 1.05rem;
+    line-height: 1.8;
+}
+
+body.detail-page .thumbnail-images {
+    gap: 8px;
+    margin-top: 18px;
+}
+
+body.detail-page .thumbnail {
+    width: 78px;
+    height: 78px;
+    border: 1px solid var(--line);
+    border-radius: 0;
+}
+
+body.detail-page .thumbnail.active {
+    border: 2px solid var(--accent);
+    box-shadow: none;
+}
+
+body.detail-page .image-counter {
+    margin: 12px 0;
+    color: var(--accent);
+    font-family: Arial, sans-serif;
+    font-size: 11px;
+    letter-spacing: 0.15em;
+}
+
+body.detail-page .image-viewer-content {
+    border-radius: 2px;
+    box-shadow: none;
+}
+
+body.detail-page .image-viewer-close {
+    border-radius: 0;
+}
+
+body.detail-page .object-description[hidden] {
+    display: none;
+}
+
+@media (max-width: 980px) {
+    body:not(:has(.landing-poster)) .collection-container {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    body.detail-page .object-detail {
+        grid-template-columns: 1fr;
+        gap: 48px;
+    }
+
+    body.detail-page .main-image {
+        height: min(680px, 80vw);
+    }
+
+    body.detail-page .object-info {
+        padding: 0;
+        border-left: 0;
+        border-top: 1px solid var(--line);
+        padding-top: 40px;
+    }
+}
+
+@media (max-width: 640px) {
+    body:not(:has(.landing-poster)) .page-shell {
+        padding: 28px 18px 64px;
+    }
+
+    body:not(:has(.landing-poster)) .page-header {
+        padding-bottom: 32px;
+    }
+
+    body:not(:has(.landing-poster)) .page-header h1,
+    body:not(:has(.landing-poster)) .page-header .brand-home-link {
+        font-size: clamp(2.8rem, 13vw, 4rem);
+    }
+
+    body:not(:has(.landing-poster)) .toolbar {
+        margin-top: 40px;
+    }
+
+    body:not(:has(.landing-poster)) .results-bar {
+        padding-top: 48px;
+    }
+
+    body:not(:has(.landing-poster)) .collection-container {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        column-gap: 18px;
+        row-gap: 40px;
+        padding-top: 32px;
+    }
+
+    body:not(:has(.landing-poster)) .collection-card-meta {
+        display: block;
+        font-size: 0.8rem;
+    }
+
+    body:not(:has(.landing-poster)) .collection-card-meta span {
+        display: block;
+        min-width: 0;
+        margin-bottom: 2px;
+    }
+
+    body.detail-page .object-detail {
+        margin-top: 40px;
+    }
+
+    body.detail-page .main-image {
+        height: 108vw;
+    }
+
+    body.detail-page .object-info h1 {
+        font-size: clamp(2rem, 10vw, 3rem);
+    }
+
+    body.detail-page .object-info p {
+        grid-template-columns: 112px minmax(0, 1fr);
+        gap: 10px;
+    }
+}
+
+/* Shared collection theme: match the landing poster */
+body:not(:has(.landing-poster)) {
+    background:
+        linear-gradient(135deg, rgba(255, 255, 255, 0.2), transparent 48%),
+        #e9e9df;
+    color: #292a23;
+}
+
+body:not(:has(.landing-poster)) .page-shell {
+    max-width: 1380px;
+    padding-top: 28px;
+}
+
+body:not(:has(.landing-poster)) .page-header {
+    padding: 24px 26px 22px;
+    border: 1px solid rgba(38, 39, 32, 0.2);
+    border-radius: 12px;
+    background: rgba(245, 246, 238, 0.45);
+    box-shadow: none;
+}
+
+body:not(:has(.landing-poster)) .eyebrow {
+    margin-bottom: 16px;
+    padding: 0;
+    border: 0;
+    border-radius: 0;
+    background: transparent;
+    box-shadow: none;
+    color: #737865;
+    font-size: 0.66rem;
+}
+
+body:not(:has(.landing-poster)) h1,
+body:not(:has(.landing-poster)) .collection-card h2,
+body:not(:has(.landing-poster)) .collection-card h2 a {
+    color: #292a23;
+}
+
+body:not(:has(.landing-poster)) .page-header h1,
+body:not(:has(.landing-poster)) .page-header .brand-home-link {
+    font-family: Georgia, "Times New Roman", serif;
+    font-weight: 400;
+    letter-spacing: -0.06em;
+}
+
+body:not(:has(.landing-poster)) .page-header .subtitle {
+    max-width: 700px;
+    color: #7d806c;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 1.08rem;
+    font-style: italic;
+    letter-spacing: 0;
+    line-height: 1.45;
+}
+
+body:not(:has(.landing-poster)) .subtitle,
+body:not(:has(.landing-poster)) .collection-card-content,
+body:not(:has(.landing-poster)) #collectionCount,
+body:not(:has(.landing-poster)) .results-note,
+body:not(:has(.landing-poster)) .image-counter {
+    color: #6d7263;
+}
+
+body:not(:has(.landing-poster)) .header-badge {
+    padding: 0 0 5px;
+    border-bottom: 1px solid rgba(38, 39, 32, 0.35);
+    border-radius: 0;
+    background: transparent;
+    box-shadow: none;
+    color: #292a23;
+    font-size: 0.68rem;
+}
+
+body:not(:has(.landing-poster)) .toolbar {
+    margin-top: 24px;
+    padding: 0;
+}
+
+body:not(:has(.landing-poster)) .collection-search {
+    width: min(100%, 620px);
+    padding: 0 14px;
+    border: 1px solid rgba(38, 39, 32, 0.22);
+    border-radius: 18px;
+    background: linear-gradient(145deg, rgba(248, 249, 242, 0.94), rgba(214, 220, 208, 0.82));
+    box-shadow: inset 8px 8px 16px rgba(201, 208, 196, 0.48), inset -7px -7px 14px rgba(255, 255, 255, 0.72);
+}
+
+body:not(:has(.landing-poster)) .search-icon {
+    color: #737865;
+}
+
+body:not(:has(.landing-poster)) #searchInput {
+    padding: 15px 0 14px;
+    color: #292a23;
+}
+
+body:not(:has(.landing-poster)) #searchInput::placeholder {
+    color: #8a8e80;
+}
+
+body:not(:has(.landing-poster)) .filter-buttons {
+    gap: 8px;
+    margin-top: 16px;
+}
+
+body:not(:has(.landing-poster)) .filter-buttons button {
+    padding: 9px 14px;
+    border: 1px solid rgba(38, 39, 32, 0.2);
+    border-radius: 16px;
+    background: linear-gradient(145deg, rgba(248, 249, 242, 0.94), rgba(211, 218, 204, 0.86));
+    color: #4f5548;
+    box-shadow: 6px 6px 13px rgba(115, 120, 101, 0.14), -5px -5px 12px rgba(255, 255, 255, 0.72);
+}
+
+body:not(:has(.landing-poster)) .filter-buttons button:hover {
+    transform: translateY(-1px);
+    border-color: #737865;
+    color: #292a23;
+}
+
+body:not(:has(.landing-poster)) .filter-buttons button:active {
+    transform: translateY(1px);
+    border-color: #4b3829;
+    background: linear-gradient(145deg, #806247, #4b3829);
+    color: #f8f9f2;
+    box-shadow: inset 3px 3px 7px rgba(75, 56, 41, 0.22), inset -3px -3px 7px rgba(255, 255, 255, 0.2);
+}
+
+body:not(:has(.landing-poster)) .filter-buttons button:focus-visible {
+    outline: 2px solid #737865;
+    outline-offset: 3px;
+}
+
+body:not(:has(.landing-poster)) .filter-buttons button.active {
+    border-color: #4b3829;
+    background: linear-gradient(145deg, #806247, #4b3829);
+    color: #f1f2e9;
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2), 7px 7px 14px rgba(75, 56, 41, 0.22);
+}
+
+body:not(:has(.landing-poster)) .results-bar {
+    padding: 26px 2px 16px;
+    border-bottom: 1px solid rgba(38, 39, 32, 0.16);
+}
+
+body:not(:has(.landing-poster)) .collection-container {
+    column-gap: 22px;
+    padding-top: 20px;
+}
+
+body:not(:has(.landing-poster)) .collection-card {
+    margin: 0 0 18px;
+    border: 1px solid rgba(38, 39, 32, 0.18);
+    border-radius: 20px;
+    background:
+        radial-gradient(circle at 20% 20%, rgba(255, 255, 255, 0.5), transparent 24%),
+        linear-gradient(145deg, rgba(248, 249, 242, 0.96), rgba(214, 220, 208, 0.9));
+    box-shadow: 10px 10px 20px rgba(115, 120, 101, 0.14), -8px -8px 18px rgba(255, 255, 255, 0.72);
+    transition: transform 0.25s ease, border-color 0.25s ease;
+}
+
+body:not(:has(.landing-poster)) .collection-card:hover {
+    transform: translateY(-4px);
+    border-color: #737865;
+    box-shadow: 12px 12px 24px rgba(115, 120, 101, 0.18), -8px -8px 20px rgba(255, 255, 255, 0.78);
+}
+
+body:not(:has(.landing-poster)) .collection-card-image,
+body:not(:has(.landing-poster)) .collection-card-image img {
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+}
+
+body:not(:has(.landing-poster)) .collection-card-image {
+    background: #dfe3d9;
+}
+
+body:not(:has(.landing-poster)) .collection-card-content {
+    padding: 17px 18px 16px;
+    background: rgba(255, 255, 255, 0.08);
+}
+
+body:not(:has(.landing-poster)) .collection-card h2 {
+    margin-top: 0;
+    font-family: "Heiti SC", "PingFang SC", Arial, sans-serif;
+    font-weight: 700;
+    letter-spacing: 0;
+}
+
+body:not(:has(.landing-poster)) .empty-collection-state {
+    border-color: rgba(38, 39, 32, 0.18);
+    color: #6d7263;
+}
+
+body.detail-page .detail-navigation {
+    margin-top: 18px;
+}
+
+body.detail-page #back-to-Collection {
+    margin-right: 0;
+    padding: 10px 15px;
+    border: 1px solid rgba(38, 39, 32, 0.18);
+    border-radius: 14px;
+    background: linear-gradient(145deg, rgba(248, 249, 242, 0.94), rgba(211, 218, 204, 0.86));
+    box-shadow: 7px 7px 15px rgba(115, 120, 101, 0.14), -7px -7px 14px rgba(255, 255, 255, 0.72);
+    color: #292a23;
+}
+
+body.detail-page #back-to-Collection:hover {
+    transform: translateY(-2px);
+    color: #737865;
+}
+
+body.detail-page .object-detail {
+    gap: 28px;
+    margin-top: 26px;
+}
+
+body.detail-page .main-image,
+body.detail-page .object-info,
+body.detail-page .object-description {
+    border: 1px solid rgba(38, 39, 32, 0.18);
+    border-radius: 20px;
+    background:
+        radial-gradient(circle at 20% 20%, rgba(255, 255, 255, 0.5), transparent 24%),
+        linear-gradient(145deg, rgba(248, 249, 242, 0.96), rgba(214, 220, 208, 0.9));
+    box-shadow: 12px 12px 24px rgba(115, 120, 101, 0.14), -9px -9px 20px rgba(255, 255, 255, 0.72);
+}
+
+body.detail-page .main-image {
+    height: 560px;
+    background: #dfe3d9;
+}
+
+body.detail-page .object-info {
+    min-height: 560px;
+    padding: 26px;
+}
+
+body.detail-page .object-info h1 {
+    color: #292a23;
+    font-family: Georgia, serif;
+    font-size: clamp(2rem, 3.5vw, 3.5rem);
+    font-weight: 400;
+    line-height: 0.98;
+}
+
+body.detail-page .object-info h2 {
+    color: #737865;
+    font-family: Georgia, serif;
+    font-weight: 400;
+}
+
+body.detail-page .object-info p,
+body.detail-page .object-description p {
+    color: #62685b;
+}
+
+body.detail-page .object-description {
+    margin-top: 28px;
+    padding: 26px;
+}
+
+body.detail-page .object-description h2 {
+    margin-top: 0;
+    color: #292a23;
+    font-family: Georgia, serif;
+    font-weight: 400;
+}
+
+body.detail-page .thumbnail {
+    border-color: rgba(38, 39, 32, 0.2);
+    border-radius: 5px;
+}
+
+body.detail-page .thumbnail.active {
+    border: 2px solid #737865;
+    box-shadow: 0 0 0 3px rgba(115, 120, 101, 0.14);
+}
+
+body.detail-page .image-viewer {
+    background: rgba(41, 42, 35, 0.9);
+}
+
+/* Landing page: editorial exhibition poster */
+.landing-poster {
+    min-height: calc(100vh - 72px);
+    padding: 0;
+}
+
+.poster-frame {
+    position: relative;
+    min-height: min(860px, calc(100vh - 72px));
+    overflow: hidden;
+    border: 1px solid rgba(38, 39, 32, 0.2);
+    border-radius: 18px;
+    background: #e9e9df;
+    color: #292a23;
+    isolation: isolate;
+}
+
+.poster-frame::before {
+    position: absolute;
+    inset: 8px;
+    z-index: -1;
+    border: 1px solid rgba(38, 39, 32, 0.11);
+    border-radius: 11px;
+    content: "";
+    pointer-events: none;
+}
+
+.poster-corner,
+.poster-footer,
+.poster-art-caption {
+    font-size: 0.66rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    line-height: 1.15;
+    text-transform: uppercase;
+}
+
+.poster-corner {
+    position: absolute;
+    top: 22px;
+    z-index: 3;
+    display: grid;
+    gap: 3px;
+}
+
+.poster-corner-top-left {
+    left: 24px;
+}
+
+.poster-corner-top-right {
+    right: 24px;
+    text-align: right;
+}
+
+.poster-wordmark {
+    position: absolute;
+    top: 18px;
+    left: 50%;
+    z-index: 3;
+    color: #292a23;
+    font-family: Georgia, serif;
+    font-size: clamp(1.5rem, 3vw, 2.5rem);
+    letter-spacing: -0.08em;
+    line-height: 1;
+    text-decoration: none;
+    transform: translateX(-50%);
+}
+
+.poster-wordmark:hover {
+    color: var(--accent-strong);
+}
+
+.poster-side-label {
+    position: absolute;
+    top: 50%;
+    z-index: 3;
+    display: grid;
+    gap: 4px;
+    font-size: 0.62rem;
+    font-weight: 700;
+    letter-spacing: 0.09em;
+    line-height: 1;
+    text-transform: uppercase;
+    writing-mode: vertical-rl;
+}
+
+.poster-side-label-left {
+    left: 22px;
+    transform: translateY(-50%) rotate(180deg);
+}
+
+.poster-side-label-right {
+    right: 22px;
+    transform: translateY(-50%);
+}
+
+.poster-art {
+    position: absolute;
+    inset: 9% 18% 13%;
+    overflow: hidden;
+    background: #e7ebe7;
+    color: inherit;
+    text-decoration: none;
+}
+
+.poster-art::after {
+    position: absolute;
+    inset: 0;
+    border: 1px solid rgba(39, 47, 39, 0.14);
+    content: "";
+    pointer-events: none;
+}
+
+.poster-art img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center 63%;
+    mix-blend-mode: multiply;
+    opacity: 0.84;
+    transform: scale(1.13);
+    transition: transform 0.8s ease, opacity 0.4s ease;
+}
+
+.poster-art.is-changing img {
+    opacity: 0;
+    transform: scale(1.06);
+}
+
+.poster-art:focus-visible {
+    outline: 2px solid #737865;
+    outline-offset: -5px;
+}
+
+.poster-frame:hover .poster-art img {
+    opacity: 0.94;
+    transform: scale(1.17);
+}
+
+.poster-art-caption {
+    position: absolute;
+    right: 18px;
+    bottom: 18px;
+    z-index: 2;
+    display: flex;
+    align-items: end;
+    gap: 12px;
+    color: rgba(38, 43, 35, 0.72);
+}
+
+.poster-art-caption span:first-child {
+    font-family: Georgia, serif;
+    font-size: 2.7rem;
+    font-weight: 400;
+    letter-spacing: -0.08em;
+}
+
+.poster-title-block {
+    position: absolute;
+    left: 10%;
+    bottom: 15%;
+    z-index: 3;
+}
+
+.poster-title-block p {
+    margin: 0 0 9px;
+    color: var(--accent-strong);
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+}
+
+.poster-title-block h1 {
+    max-width: 540px;
+    color: #292a23;
+    font-family: Arial, sans-serif;
+    font-size: clamp(2.5rem, 5.4vw, 5.7rem);
+    line-height: 0.86;
+    letter-spacing: -0.08em;
+}
+
+.poster-title-block h1 em {
+    color: #7d806c;
+    font-family: Georgia, serif;
+    font-weight: 400;
+}
+
+.poster-footer {
+    position: absolute;
+    right: 24px;
+    bottom: 22px;
+    left: 24px;
+    z-index: 3;
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    align-items: end;
+    gap: 18px;
+}
+
+.poster-footer-note {
+    color: rgba(38, 43, 35, 0.68);
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    text-transform: none;
+}
+
+.poster-footer-note-right {
+    text-align: right;
+}
+
+.poster-links {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+}
+
+.poster-links a {
+    color: #292a23;
+    text-decoration: none;
+}
+
+.poster-links a:hover {
+    color: var(--accent-strong);
+}
+
+.poster-links .poster-enter-link {
+    padding-bottom: 5px;
+    border-bottom: 1px solid currentColor;
+    color: #292a23;
+}
+
+.poster-enter-link span {
+    color: var(--accent-strong);
+    font-size: 1rem;
+}
+
+@media (max-width: 640px) {
+    .landing-poster {
+        min-height: calc(100vh - 28px);
+    }
+
+    .poster-frame {
+        min-height: calc(100vh - 28px);
+        border-radius: 13px;
+    }
+
+    .poster-corner {
+        top: 17px;
+        font-size: 0.5rem;
+    }
+
+    .poster-corner-top-left {
+        left: 16px;
+    }
+
+    .poster-corner-top-right {
+        right: 16px;
+    }
+
+    .poster-wordmark {
+        top: 17px;
+        font-size: 1.45rem;
+    }
+
+    .poster-side-label {
+        font-size: 0.48rem;
+    }
+
+    .poster-side-label-left {
+        left: 14px;
+    }
+
+    .poster-side-label-right {
+        right: 14px;
+    }
+
+    .poster-art {
+        inset: 15% 12% 26%;
+    }
+
+    .poster-art img {
+        object-position: center 66%;
+        transform: scale(1.18);
+    }
+
+    .poster-title-block {
+        bottom: 16%;
+        left: 12%;
+    }
+
+    .poster-title-block p {
+        margin-bottom: 7px;
+        font-size: 0.55rem;
+    }
+
+    .poster-title-block h1 {
+        max-width: 270px;
+        font-size: clamp(2.1rem, 11vw, 3.4rem);
+    }
+
+    .poster-art-caption {
+        right: 10px;
+        bottom: 10px;
+        font-size: 0.5rem;
+    }
+
+    .poster-art-caption span:first-child {
+        font-size: 2rem;
+    }
+
+    .poster-footer {
+        right: 16px;
+        bottom: 16px;
+        left: 16px;
+        display: block;
+        font-size: 0.52rem;
+    }
+
+    .poster-footer-note {
+        display: none;
+    }
+
+    .poster-links {
+        justify-content: center;
+        gap: 12px;
+        flex-wrap: wrap;
+    }
+}
+
 :root {
     --bg: #f5f0e7;
     --bg-2: #e9dfd2;
@@ -34,6 +1804,173 @@ body {
 
 .detail-shell {
     min-height: 100vh;
+}
+
+.landing-gateway {
+    min-height: min(820px, calc(100vh - 48px));
+    padding: 24px 0 72px;
+}
+
+.landing-gateway-topline,
+.landing-category-meta {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 18px;
+    color: var(--muted);
+    font-size: 0.68rem;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+}
+
+.landing-gateway-topline {
+    border-bottom: 1px solid var(--line);
+    padding-bottom: 14px;
+}
+
+.landing-gateway-heading {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    align-items: end;
+    gap: 32px;
+    padding: clamp(64px, 10vw, 138px) 0 52px;
+}
+
+.landing-kicker {
+    grid-column: 1 / -1;
+    margin: 0;
+    color: var(--accent-strong);
+    font-size: 0.78rem;
+    font-weight: 700;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+}
+
+.landing-gateway h1 {
+    max-width: 860px;
+    font-size: clamp(3.6rem, 9vw, 9rem);
+    line-height: 0.87;
+    letter-spacing: -0.075em;
+}
+
+.landing-gateway h1 em {
+    color: var(--accent-strong);
+    font-family: Georgia, serif;
+    font-weight: 400;
+}
+
+.landing-enter-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 14px;
+    padding-bottom: 8px;
+    border-bottom: 1px solid var(--ink-strong);
+    color: var(--ink-strong);
+    font-size: 0.82rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-decoration: none;
+    text-transform: uppercase;
+    white-space: nowrap;
+}
+
+.landing-enter-link span {
+    color: var(--accent-strong);
+    font-size: 1.2rem;
+}
+
+.landing-category-grid {
+    display: grid;
+    grid-template-columns: 1.15fr 0.85fr;
+    gap: 18px;
+}
+
+.landing-category {
+    display: block;
+    color: var(--ink-strong);
+    text-decoration: none;
+}
+
+.landing-category-image {
+    position: relative;
+    display: block;
+    height: clamp(240px, 32vw, 420px);
+    overflow: hidden;
+    background: #e8e0d1;
+    border: 1px solid transparent;
+    transition: border-color 0.3s ease;
+}
+
+.landing-category-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center 42%;
+    transition: transform 0.55s cubic-bezier(0.2, 0.7, 0.2, 1), filter 0.35s ease;
+}
+
+.landing-category-image-empty {
+    display: grid;
+    place-items: center;
+    background:
+        radial-gradient(circle at 50% 42%, rgba(208, 157, 79, 0.44), transparent 22%),
+        linear-gradient(135deg, #3a3025, #9f7140 52%, #30271f);
+    color: rgba(255, 246, 226, 0.86);
+    font-family: Georgia, serif;
+    font-size: clamp(2rem, 5vw, 5rem);
+    line-height: 0.82;
+    letter-spacing: -0.07em;
+    text-align: center;
+}
+
+.landing-category-meta {
+    position: relative;
+    padding: 16px 2px 0;
+    transition: transform 0.35s ease;
+}
+
+.landing-category-title {
+    margin-right: auto;
+    color: var(--ink-strong);
+    font-family: Georgia, serif;
+    font-size: clamp(1.35rem, 2.5vw, 2.6rem);
+    font-weight: 400;
+    letter-spacing: -0.04em;
+    text-transform: none;
+}
+
+.landing-category-action {
+    color: var(--accent-strong);
+    opacity: 0;
+    transform: translateX(-10px);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.landing-category-action span {
+    font-size: 1.15rem;
+}
+
+.landing-category:hover .landing-category-image,
+.landing-category:focus-visible .landing-category-image {
+    border-color: var(--accent-strong);
+}
+
+.landing-category:hover .landing-category-image img,
+.landing-category:focus-visible .landing-category-image img {
+    transform: scale(1.06);
+    filter: saturate(1.08) contrast(1.04);
+}
+
+.landing-category:hover .landing-category-meta,
+.landing-category:focus-visible .landing-category-meta {
+    transform: translateX(8px);
+}
+
+.landing-category:hover .landing-category-action,
+.landing-category:focus-visible .landing-category-action {
+    opacity: 1;
+    transform: translateX(0);
 }
 
 .detail-navigation {
@@ -114,6 +2051,15 @@ h1 {
     letter-spacing: -0.065em;
     color: var(--ink-strong);
     font-weight: 800;
+}
+
+.brand-home-link {
+    color: inherit;
+    text-decoration: none;
+}
+
+.brand-home-link:hover {
+    color: var(--accent-strong);
 }
 
 .subtitle {
@@ -227,6 +2173,14 @@ h1 {
     text-transform: uppercase;
     letter-spacing: 0.08em;
     color: rgba(44, 40, 35, 0.66);
+}
+
+.empty-collection-state {
+    margin: 42px 0 80px;
+    padding: 42px 24px;
+    border: 1px solid var(--line);
+    color: var(--muted);
+    text-align: center;
 }
 
 .collection-container {
@@ -548,6 +2502,59 @@ body.detail-page .object-description {
 }
 
 @media (max-width: 640px) {
+    .landing-gateway {
+        min-height: auto;
+        padding-top: 14px;
+        padding-bottom: 54px;
+    }
+
+    .landing-gateway-topline {
+        font-size: 0.58rem;
+    }
+
+    .landing-gateway-heading {
+        display: block;
+        padding: 72px 0 38px;
+    }
+
+    .landing-gateway h1 {
+        font-size: clamp(3.5rem, 16vw, 5.8rem);
+    }
+
+    .landing-enter-link {
+        margin-top: 30px;
+    }
+
+    .landing-category-grid {
+        grid-template-columns: 1fr;
+        gap: 34px;
+    }
+
+    .landing-category-image {
+        height: min(74vw, 330px);
+    }
+
+    .landing-category-meta {
+        display: grid;
+        grid-template-columns: auto 1fr;
+        gap: 8px 14px;
+    }
+
+    .landing-category-index {
+        grid-row: span 2;
+        align-self: start;
+    }
+
+    .landing-category-title {
+        font-size: 1.7rem;
+    }
+
+    .landing-category-action {
+        opacity: 1;
+        transform: none;
+        justify-self: start;
+    }
+
     .object-info h1 {
         font-size: clamp(1.7rem, 7vw, 2.4rem);
         line-height: 1.08;
@@ -618,4 +2625,559 @@ body.detail-page .object-description {
         align-items: flex-start;
     }
 
+}
+
+/* Final cascade: inner pages inherit the landing poster language. */
+body:not(:has(.landing-poster)) {
+    background: #f2efe9;
+    color: #1f1c18;
+}
+
+body:not(:has(.landing-poster)) .page-shell {
+    max-width: 1380px;
+    padding: 48px 32px 96px;
+}
+
+body:not(:has(.landing-poster)) .page-header {
+    padding: 38px 32px 34px;
+    border: 1px solid #d8d2c6;
+    border-radius: 8px;
+    background: linear-gradient(135deg, #fbfaf6 0%, #eeeae1 100%);
+    box-shadow: 0 14px 28px rgba(88, 70, 48, 0.08), inset 0 1px 0 rgba(255, 255, 255, 0.76);
+}
+
+body:not(:has(.landing-poster)) .eyebrow {
+    margin-bottom: 24px;
+    padding: 0;
+    border: 0;
+    background: transparent;
+    box-shadow: none;
+    color: #8a6d4b;
+    font-size: 12px;
+    letter-spacing: 0.15em;
+}
+
+body:not(:has(.landing-poster)) .page-header h1,
+body:not(:has(.landing-poster)) .page-header .brand-home-link {
+    color: #1f1c18;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: clamp(3.5rem, 6vw, 5.3rem);
+    font-weight: 400;
+    letter-spacing: -0.07em;
+    line-height: 0.9;
+}
+
+body:not(:has(.landing-poster)) .page-header .subtitle {
+    max-width: 720px;
+    margin-top: 20px;
+    color: #8a6d4b;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: clamp(1.05rem, 1.6vw, 1.25rem);
+    font-style: italic;
+    line-height: 1.35;
+}
+
+body:not(:has(.landing-poster)) .header-badge {
+    padding: 0 0 7px;
+    border: 0;
+    border-bottom: 1px solid #8a6d4b;
+    border-radius: 0;
+    background: transparent;
+    box-shadow: none;
+    color: #8a6d4b;
+    font-size: 12px;
+    letter-spacing: 0.15em;
+}
+
+body:not(:has(.landing-poster)) .toolbar {
+    margin-top: 64px;
+    padding: 0;
+}
+
+body:not(:has(.landing-poster)) .collection-search {
+    width: min(100%, 560px);
+    padding: 0;
+    border: 0;
+    border-bottom: 1px solid #d8d2c6;
+    border-radius: 0;
+    background: transparent;
+    box-shadow: none;
+}
+
+body:not(:has(.landing-poster)) .search-icon {
+    color: #8a6d4b;
+}
+
+body:not(:has(.landing-poster)) #searchInput {
+    padding: 12px 0 11px;
+    color: #1f1c18;
+}
+
+body:not(:has(.landing-poster)) .filter-buttons {
+    gap: 24px;
+    margin: 28px 0 0;
+}
+
+body:not(:has(.landing-poster)) .filter-buttons button {
+    padding: 0 0 7px;
+    border: 0;
+    border-bottom: 1px solid transparent;
+    border-radius: 0;
+    background: transparent;
+    color: #6f685e;
+    box-shadow: none;
+    font-size: 12px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+}
+
+body:not(:has(.landing-poster)) .filter-buttons button:hover,
+body:not(:has(.landing-poster)) .filter-buttons button:active,
+body:not(:has(.landing-poster)) .filter-buttons button.active {
+    transform: none;
+    border-bottom-color: #8a6d4b;
+    background: transparent;
+    color: #8a6d4b;
+    box-shadow: none;
+}
+
+body:not(:has(.landing-poster)) .results-bar {
+    padding: 64px 0 20px;
+    border-bottom: 1px solid #d8d2c6;
+}
+
+body:not(:has(.landing-poster)) #collectionCount,
+body:not(:has(.landing-poster)) .results-note {
+    color: #8a6d4b;
+    font-family: Arial, sans-serif;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.15em;
+}
+
+body:not(:has(.landing-poster)) .collection-container {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    column-count: unset;
+    column-gap: 32px;
+    row-gap: 64px;
+    padding-top: 48px;
+}
+
+body:not(:has(.landing-poster)) .collection-card {
+    display: block;
+    width: 100%;
+    margin: 0;
+    border: 0;
+    border-bottom: 1px solid #d8d2c6;
+    border-radius: 0;
+    background: transparent;
+    box-shadow: none;
+    overflow: visible;
+}
+
+body:not(:has(.landing-poster)) .collection-card:hover {
+    transform: none;
+    border-color: #d8d2c6;
+    box-shadow: none;
+}
+
+body:not(:has(.landing-poster)) .collection-card-image,
+body:not(:has(.landing-poster)) .collection-card-image img {
+    border-radius: 0;
+}
+
+body:not(:has(.landing-poster)) .collection-card-image {
+    background: #eaf0f0;
+    border: 1px solid #d8d2c6;
+}
+
+body:not(:has(.landing-poster)) .collection-card-content {
+    padding: 20px 0 22px;
+    background: transparent;
+}
+
+body:not(:has(.landing-poster)) .collection-card h2,
+body:not(:has(.landing-poster)) .collection-card h2 a {
+    margin: 0;
+    color: #1f1c18;
+    font-family: "Noto Serif SC", "Songti SC", "STSong", Georgia, serif;
+    font-size: 1.2rem;
+    font-weight: 400;
+    letter-spacing: 0;
+    line-height: 1.35;
+}
+
+body:not(:has(.landing-poster)) .collection-card-english {
+    margin: 7px 0 18px;
+    color: #8a6d4b;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 0.9rem;
+    font-style: italic;
+    line-height: 1.35;
+}
+
+body:not(:has(.landing-poster)) .collection-card-meta {
+    display: flex;
+    gap: 8px;
+    margin: 6px 0 0;
+    color: #1f1c18;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 0.9rem;
+    line-height: 1.45;
+}
+
+body:not(:has(.landing-poster)) .collection-card-meta span {
+    min-width: 118px;
+    color: #6f685e;
+    font-family: Arial, sans-serif;
+    font-size: 10px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+}
+
+body.detail-page .detail-navigation {
+    margin: 32px 0 0;
+}
+
+body.detail-page #back-to-Collection {
+    margin: 0;
+    padding: 0 0 7px;
+    border: 0;
+    border-bottom: 1px solid #8a6d4b;
+    border-radius: 0;
+    background: transparent;
+    box-shadow: none;
+    color: #8a6d4b;
+    font-size: 12px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+}
+
+body.detail-page .object-detail {
+    display: grid;
+    grid-template-columns: minmax(0, 1.2fr) minmax(320px, 0.8fr);
+    gap: 64px;
+    margin-top: 64px;
+}
+
+body.detail-page .object-image {
+    width: auto;
+}
+
+body.detail-page .main-image {
+    height: min(680px, 58vw);
+    border: 1px solid #d8d2c6;
+    border-radius: 2px;
+    background: #eaf0f0;
+    box-shadow: none;
+}
+
+body.detail-page .object-info {
+    width: auto;
+    min-height: 0;
+    padding: 12px 0 0 40px;
+    border: 0;
+    border-left: 1px solid #d8d2c6;
+    border-radius: 0;
+    background: transparent;
+    box-shadow: none;
+}
+
+body.detail-page .object-info h1 {
+    margin: 0;
+    color: #1f1c18;
+    font-family: "Noto Serif SC", "Songti SC", "STSong", Georgia, serif;
+    font-size: clamp(2rem, 3.4vw, 3.5rem);
+    font-weight: 400;
+    letter-spacing: 0;
+    line-height: 1.12;
+}
+
+body.detail-page .object-info h2 {
+    margin: 12px 0 48px;
+    color: #8a6d4b;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: clamp(1.05rem, 1.7vw, 1.35rem);
+    font-style: italic;
+    font-weight: 400;
+}
+
+body.detail-page .object-info p {
+    display: grid;
+    grid-template-columns: 130px minmax(0, 1fr);
+    gap: 16px;
+    margin: 0;
+    padding: 13px 0;
+    border-top: 1px solid #d8d2c6;
+    color: #1f1c18;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 1rem;
+    line-height: 1.45;
+}
+
+body.detail-page .object-info p strong {
+    color: #6f685e;
+    font-family: Arial, sans-serif;
+    font-size: 10px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+}
+
+body.detail-page .object-description {
+    margin-top: 96px;
+    padding: 32px 0 0;
+    border: 0;
+    border-top: 1px solid #d8d2c6;
+    border-radius: 0;
+    background: transparent;
+    box-shadow: none;
+}
+
+/* Design proof: final collection-page cascade. */
+body:not(:has(.landing-poster)) .page-header {
+    width: calc(100% + 64px);
+    margin-left: -32px;
+    margin-right: -32px;
+    padding: 38px 64px 34px;
+    border: 1px solid #d8d2c6;
+    border-radius: 0;
+    background: linear-gradient(135deg, #fbfaf6 0%, #eeeae1 100%);
+    box-shadow: 0 14px 28px rgba(88, 70, 48, 0.08), inset 0 1px 0 rgba(255, 255, 255, 0.76);
+}
+
+body:not(:has(.landing-poster)) .toolbar {
+    margin-top: 32px;
+}
+
+body:not(:has(.landing-poster)) .filter-buttons {
+    margin-top: 18px;
+}
+
+body:not(:has(.landing-poster)) .results-bar {
+    padding-top: 34px;
+}
+
+body:not(:has(.landing-poster)) .collection-container {
+    padding-top: 34px;
+}
+
+body:not(:has(.landing-poster)) .collection-card {
+    border: 1px solid #dfe5df;
+    background: rgba(242, 246, 243, 0.34);
+}
+
+body:not(:has(.landing-poster)) .collection-card-content {
+    padding: 18px 14px 18px;
+    border-top: 1px solid #dfe5df;
+}
+
+body:not(:has(.landing-poster)) .collection-card-meta {
+    padding-top: 7px;
+    border-top: 1px solid rgba(216, 210, 198, 0.7);
+}
+
+body:not(:has(.landing-poster)) .collection-card-meta + .collection-card-meta {
+    margin-top: 0;
+}
+
+@media (max-width: 980px) {
+    body:not(:has(.landing-poster)) .page-header {
+        width: calc(100% + 56px);
+        margin-left: -28px;
+        margin-right: -28px;
+        padding-left: 56px;
+        padding-right: 56px;
+    }
+}
+
+@media (max-width: 640px) {
+    body:not(:has(.landing-poster)) .page-header {
+        width: calc(100% + 36px);
+        margin-left: -18px;
+        margin-right: -18px;
+        padding: 30px 36px 32px;
+    }
+}
+
+body:not(:has(.landing-poster)) .inner-side-marker {
+    position: fixed;
+    top: 280px;
+    left: 0;
+    z-index: 20;
+}
+
+body:not(:has(.landing-poster)) .load-more-link {
+    display: flex;
+    position: relative;
+    z-index: 20;
+    width: fit-content;
+    margin-top: 48px;
+    margin-right: 0;
+    margin-left: auto;
+    padding: 12px 18px;
+    border: 1px solid #1f1c18;
+    border-radius: 0;
+    background: #1f1c18;
+    color: #f2efe9;
+    box-shadow: none;
+}
+
+body:not(:has(.landing-poster)) .load-more-link:hover {
+    border-color: #8a6d4b;
+    background: #8a6d4b;
+    color: #f2efe9;
+}
+
+@media (max-width: 640px) {
+    body:not(:has(.landing-poster)) .inner-side-marker {
+        position: static;
+        top: auto;
+        left: auto;
+    }
+}
+
+body:not(:has(.landing-poster)) {
+    background: #e9eeeb;
+}
+
+body.detail-page .object-description h2 {
+    margin: 0 0 18px;
+    color: #8a6d4b;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 2rem;
+    font-style: italic;
+    font-weight: 400;
+}
+
+body.detail-page .object-description p {
+    max-width: 820px;
+    margin: 0;
+    color: #1f1c18;
+    font-family: "Noto Serif SC", "Songti SC", "STSong", Georgia, serif;
+    font-size: 1.05rem;
+    line-height: 1.8;
+}
+
+body.detail-page .thumbnail-images {
+    gap: 8px;
+    margin-top: 18px;
+}
+
+body.detail-page .thumbnail {
+    width: 78px;
+    height: 78px;
+    border: 1px solid #d8d2c6;
+    border-radius: 0;
+}
+
+body.detail-page .thumbnail.active {
+    border: 2px solid #8a6d4b;
+    box-shadow: none;
+}
+
+body.detail-page .image-counter {
+    margin: 12px 0;
+    color: #8a6d4b;
+    font-size: 11px;
+    letter-spacing: 0.15em;
+}
+
+body.detail-page .object-description[hidden] {
+    display: none;
+}
+
+@media (max-width: 980px) {
+    body:not(:has(.landing-poster)) .collection-container {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    body.detail-page .object-detail {
+        grid-template-columns: 1fr;
+        gap: 48px;
+    }
+
+    body.detail-page .main-image {
+        height: min(680px, 80vw);
+    }
+
+    body.detail-page .object-info {
+        padding: 40px 0 0;
+        border-top: 1px solid #d8d2c6;
+        border-left: 0;
+    }
+}
+
+@media (max-width: 640px) {
+    body:not(:has(.landing-poster)) .page-shell {
+        padding: 28px 18px 64px;
+    }
+
+    body:not(:has(.landing-poster)) .page-header {
+        padding-bottom: 32px;
+    }
+
+    body:not(:has(.landing-poster)) .page-header h1,
+    body:not(:has(.landing-poster)) .page-header .brand-home-link {
+        font-size: clamp(2.8rem, 13vw, 4rem);
+    }
+
+    body:not(:has(.landing-poster)) .toolbar {
+        margin-top: 40px;
+    }
+
+    body:not(:has(.landing-poster)) .results-bar {
+        padding-top: 48px;
+    }
+
+    body:not(:has(.landing-poster)) .collection-container {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        column-gap: 18px;
+        row-gap: 40px;
+        padding-top: 32px;
+    }
+
+    body:not(:has(.landing-poster)) .collection-card-meta {
+        display: block;
+        font-size: 0.8rem;
+    }
+
+    body:not(:has(.landing-poster)) .collection-card-meta span {
+        display: block;
+        min-width: 0;
+        margin-bottom: 2px;
+    }
+
+    body.detail-page .object-detail {
+        margin-top: 40px;
+    }
+
+    body.detail-page .main-image {
+        height: 108vw;
+    }
+
+    body.detail-page .object-info h1 {
+        font-size: clamp(2rem, 10vw, 3rem);
+    }
+
+    body.detail-page .object-info p {
+        grid-template-columns: 112px minmax(0, 1fr);
+        gap: 10px;
+    }
+}
+
+body.detail-page .object-info h1 {
+    font-family: "Noto Serif SC", "Songti SC", "STSong", Georgia, serif;
+    font-weight: 400;
+    letter-spacing: 0;
+}
+
+body.detail-page .object-description {
+    margin-top: 96px;
+    padding: 32px 0 0;
+    border: 0;
+    border-top: 1px solid #d8d2c6;
+    border-radius: 0;
+    background: transparent;
+    box-shadow: none;
 }
