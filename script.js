@@ -155,9 +155,10 @@ fetch("collection-data.json")
             const card = document.createElement("div");
             card.className = "collection-card";
             card.setAttribute("data-type", object.type);
+            card.classList.add(`object-${object.collectionNumber.toLowerCase()}`);
             card.classList.add("compact-image-card");
-            if (object.collectionNumber === "FDA011") {
-                card.classList.add("tall-image-card");
+            if (/[盏碗盘]/.test(object.name)) {
+                card.classList.add("shallow-vessel-card");
             }
             // 自动生成详情页链接
             const detailPage =
@@ -195,6 +196,28 @@ fetch("collection-data.json")
             `;
 
             container.appendChild(card);
+
+            const imageElement = card.querySelector("img");
+            const imageFrame = card.querySelector(".collection-card-image");
+
+            const applyImageRatio = function() {
+                if (!imageElement || !imageFrame) {
+                    return;
+                }
+
+                if (imageElement.naturalWidth && imageElement.naturalHeight) {
+                    imageFrame.style.setProperty(
+                        "--image-ratio",
+                        `${imageElement.naturalWidth} / ${imageElement.naturalHeight}`
+                    );
+                }
+            };
+
+            if (imageElement.complete) {
+                applyImageRatio();
+            } else {
+                imageElement.addEventListener("load", applyImageRatio, { once: true });
+            }
 
         });
 
