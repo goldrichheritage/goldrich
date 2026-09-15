@@ -9,43 +9,58 @@
 
 <body>
     <div class="page-shell">
-        <header class="page-header">
-            <div class="eyebrow">Curated Collection</div>
-            <div class="header-row">
-                <div>
-                    <h1>GOLDRICH Collection</h1>
-                    <p class="subtitle">A digital archive of our art objects and cultural heritage.</p>
+        <section class="landing-poster" aria-labelledby="landing-title">
+            <div class="poster-frame">
+                <div class="poster-corner poster-corner-top-left">
+                    <span>GOLDRICH</span>
+                    <span>DIGITAL ARCHIVE</span>
                 </div>
-                <div class="header-badge">Featured archive</div>
-            </div>
-        </header>
 
-        <section class="toolbar" aria-label="Collection controls">
-            <div class="collection-search">
-                <span class="search-icon">⌕</span>
-                <input
-                    type="text"
-                    id="searchInput"
-                    placeholder="Search collection..."
-                >
-            </div>
+                <a class="poster-wordmark" href="collection.html" aria-label="Open GOLDRICH collection">
+                    GOLDRICH  HERITAGE  &  ARTS
+                </a>
 
-            <div class="filter-buttons" aria-label="Collection categories">
-                <button class="filter-button active" onclick="filterCollection('All')">All</button>
-                <button class="filter-button" onclick="filterCollection('Bronze Ware')">Bronze Ware</button>
-                <button class="filter-button" onclick="filterCollection('Porcelain')">Porcelain</button>
-                <button class="filter-button" onclick="filterCollection('Chinese Painting')">Chinese Painting</button>
+                <div class="poster-corner poster-corner-top-right">
+                    <span>2026.009  </span>
+                    <span>OPEN COLLECTION</span>
+                </div>
+
+                <div class="poster-side-label poster-side-label-left">
+                    <span>OBJECTS WITH A LIFE</span>
+                    <span>BEYOND DISPLAY</span>
+                </div>
+
+                <div class="poster-side-label poster-side-label-right">
+                    <span>PORCELAIN / 01</span>
+                    <span>FORM &amp; MEMORY</span>
+                </div>
+
+                <a class="poster-art" id="featuredObjectLink" href="detail.html?id=FDA002" aria-label="View featured object">
+                    <img id="featuredObjectImage" src="images/PHOTO_2026SEP09/202608909_古董-8.jpg" alt="宋元龙泉窑印花葵口碗">
+                    <div class="poster-art-caption">
+                        <span id="featuredObjectIndex">01</span>
+                        <span id="featuredObjectCaption">宋元龙泉窑印花葵口碗<br>Song-Yuan Dynasty</span>
+                    </div>
+                </a>
+
+                <div class="poster-title-block">
+                    <p>COLLECTION / 001</p>
+                    <h1 id="landing-title">A living archive<br><em>of material culture.</em></h1>
+                </div>
+
+                <div class="poster-footer">
+                    <div class="poster-footer-note">A considered archive of art objects<br>and cultural heritage.</div>
+                    <div class="poster-links">
+                        <a class="poster-enter-link" href="collection.html">Enter collection <span>↗</span></a>
+                        <a href="collection.html?type=Porcelain#collection">Porcelain</a>
+                        <a href="collection.html?type=Bronze%20Ware#collection">Bronze Ware</a>
+                    </div>
+                    <div class="poster-footer-note poster-footer-note-right">SCROLL TO<br>EXPLORE</div>
+                </div>
             </div>
         </section>
 
-        <div class="results-bar">
-            <p id="collectionCount">16 objects</p>
-            <span class="results-note">Explore our archive</span>
-        </div>
-
-        <main id="collectionContainer" class="collection-container" aria-live="polite"></main>
     </div>
-
-    <script src="script.js"></script>
+    <script src="landing.js"></script>
 </body>
 </html>
