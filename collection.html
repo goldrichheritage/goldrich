@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GOLDRICH Collection</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="page-shell">
+        <div class="inner-side-marker" aria-hidden="true">
+            <a href="collection.html">
+                <span>OBJECTS WITH A LIFE | BEYOND DISPLAY</span>
+            </a>
+        </div>
+        <header class="page-header">
+            <div class="eyebrow">Curated Collection</div>
+            <div class="header-row">
+                <div>
+                    <h1><a class="brand-home-link" href="index.html">GOLDRICH Collection</a></h1>
+                    <p class="subtitle">A digital archive of our art objects and cultural heritage.</p>
+                </div>
+                <div class="header-badge">Featured archive</div>
+            </div>
+        </header>
+
+        <section id="collection" class="collection-section">
+            <section class="toolbar" aria-label="Collection controls">
+                <div class="collection-search">
+                    <span class="search-icon">⌕</span>
+                    <input
+                        type="text"
+                        id="searchInput"
+                        placeholder="Search collection..."
+                    >
+                </div>
+
+                <div class="filter-buttons" aria-label="Collection categories">
+                    <button class="filter-button active" type="button" data-filter="All">All</button>
+                    <button class="filter-button" type="button" data-filter="Bronze Ware">Bronze Ware</button>
+                    <button class="filter-button" type="button" data-filter="Porcelain">Porcelain</button>
+                    <button class="filter-button" type="button" data-filter="Chinese Painting">Chinese Painting</button>
+                </div>
+            </section>
+
+            <div class="results-bar">
+                <p id="collectionCount">16 objects</p>
+                <span class="results-note">Explore our archive</span>
+            </div>
+
+            <main id="collectionContainer" class="collection-container" aria-live="polite"></main>
+            <p id="emptyCollectionState" class="empty-collection-state" hidden>
+                This archive is being catalogued. New objects will appear here soon.
+            </p>
+        </section>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
