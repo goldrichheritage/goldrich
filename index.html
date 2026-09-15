@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GOLDRICH Collection</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="page-shell">
+        <header class="page-header">
+            <div class="eyebrow">Curated Collection</div>
+            <div class="header-row">
+                <div>
+                    <h1>GOLDRICH Collection</h1>
+                    <p class="subtitle">A digital archive of museum objects and cultural heritage.</p>
+                </div>
+                <div class="header-badge">Featured archive</div>
+            </div>
+        </header>
+
+        <section class="toolbar" aria-label="Collection controls">
+            <div class="collection-search">
+                <span class="search-icon">⌕</span>
+                <input
+                    type="text"
+                    id="searchInput"
+                    placeholder="Search collection..."
+                >
+            </div>
+
+            <div class="filter-buttons" aria-label="Collection categories">
+                <button class="filter-button active" onclick="filterCollection('All')">All</button>
+                <button class="filter-button" onclick="filterCollection('Bronze Ware')">Bronze Ware</button>
+                <button class="filter-button" onclick="filterCollection('Porcelain')">Porcelain</button>
+                <button class="filter-button" onclick="filterCollection('Chinese Painting')">Chinese Painting</button>
+            </div>
+        </section>
+
+        <div class="results-bar">
+            <p id="collectionCount">0 objects</p>
+            <span class="results-note">Explore our archive</span>
+        </div>
+
+        <main id="collectionContainer" class="collection-container" aria-live="polite"></main>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
