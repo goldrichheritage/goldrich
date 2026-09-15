@@ -369,6 +369,16 @@ body.detail-page .object-description {
     box-shadow: none;
 }
 
+/* Default landing-poster photographs sit 5% lower in their crop. */
+body:has(.landing-poster) .poster-art img {
+    object-position: center 58%;
+}
+
+/* These three photographs need a larger 20% downward crop adjustment. */
+body:has(.landing-poster) .poster-art.is-lower-crop img {
+    object-position: center 52%;
+}
+
 /* Keep the four fully visible collection cards in focus while dimming the rest. */
 body:not(:has(.landing-poster)) .collection-card.is-visible.is-muted {
     opacity: 0.4;
@@ -1679,6 +1689,13 @@ body.detail-page .image-viewer {
     font-size: 1rem;
 }
 
+@media (min-width: 1600px) {
+    .poster-title-block h1 {
+        max-width: 980px;
+        font-size: clamp(7rem, 9vw, 11rem);
+    }
+}
+
 @media (max-width: 640px) {
     .landing-poster {
         min-height: calc(100vh - 28px);
@@ -2932,6 +2949,25 @@ body.detail-page .object-description {
     border-radius: 0;
     background: transparent;
     box-shadow: none;
+}
+
+/* Final landing sizing override: always fill the current device viewport. */
+body:has(.landing-poster) .page-shell,
+body:has(.landing-poster) .landing-poster,
+body:has(.landing-poster) .poster-frame {
+    width: 100%;
+    min-height: 100vh;
+    min-height: 100dvh;
+}
+
+body:has(.landing-poster) .page-shell {
+    max-width: none;
+    margin: 0;
+    padding: 0;
+}
+
+body:has(.landing-poster) .poster-frame {
+    border-radius: 0;
 }
 
 /* Design proof: final collection-page cascade. */
