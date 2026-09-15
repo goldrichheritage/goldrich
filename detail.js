@@ -92,8 +92,12 @@ fetch("collection-data.json")
             object.collector || "—";
 
 
-        document.getElementById("introduction").textContent =
-            object.introduction || "No introduction available.";
+        const introductionBlock = document.querySelector(".object-description");
+        if (object.introduction) {
+            document.getElementById("introduction").textContent = object.introduction;
+        } else if (introductionBlock) {
+            introductionBlock.hidden = true;
+        }
 
 
         // ========================================
