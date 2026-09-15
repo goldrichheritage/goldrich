@@ -256,40 +256,60 @@ h1 {
     box-shadow: 12px 12px 24px rgba(149, 120, 83, 0.14), -8px -8px 20px rgba(255,255,255,0.8);
 }
 
+.collection-card h2,
+.collection-card h2 a {
+    color: var(--ink-strong);
+    text-decoration: none;
+}
+
+.collection-card h2 a:hover {
+    color: var(--accent-strong);
+}
+
 .collection-card-image {
     display: block;
     overflow: hidden;
     background: #e7dcc5;
+    aspect-ratio: var(--image-ratio, 4 / 5);
+    border-top-left-radius: 22px;
+    border-top-right-radius: 22px;
     border-bottom: 1px solid rgba(120, 95, 52, 0.08);
 }
 
-.compact-image-card .collection-card-image {
-    height: clamp(210px, 58vw, 300px);
+.collection-card-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-top-left-radius: 22px;
+    border-top-right-radius: 22px;
+    transform-origin: center;
 }
 
 .compact-image-card .collection-card-image img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    transform: scale(1.2);
-    transform-origin: center;
+    transform: scale(1.12);
 }
 
-.tall-image-card .collection-card-image {
-    height: 450px;
+.shallow-vessel-card .collection-card-image {
+    aspect-ratio: 1 / 1.1;
 }
 
-.collection-card:not(.compact-image-card) .collection-card-image {
-    height: 600px;
+.shallow-vessel-card .collection-card-image img {
+    transform: scale(var(--vessel-scale, 1.1));
+    object-position: 50% var(--vessel-position, 100%);
+    transform-origin: center var(--vessel-position, 100%);
 }
 
-.collection-card:not(.compact-image-card) .collection-card-image img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    transform: scale(1.2);
-    transform-origin: center;
-}
+.object-fda002 { --vessel-scale: 1.08; --vessel-position: 100%; }
+.object-fda003 { --vessel-scale: 1.10; --vessel-position: 100%; }
+.object-fda004 { --vessel-scale: 1.05; --vessel-position: 100%; }
+.object-fda005 { --vessel-scale: 1.10; --vessel-position: 100%; }
+.object-fda006 { --vessel-scale: 1.08; --vessel-position: 100%; }
+.object-fda007 { --vessel-scale: 1.02; --vessel-position: 100%; }
+.object-tps001 { --vessel-scale: 1.10; --vessel-position: 100%; }
+.object-tps002 { --vessel-scale: 1.08; --vessel-position: 100%; }
+.object-tps003 { --vessel-scale: 1.14; --vessel-position: 100%; }
+.object-tps004 { --vessel-scale: 1.12; --vessel-position: 100%; }
+.object-tps005 { --vessel-scale: 1.06; --vessel-position: 100%; }
 
 
 .collection-card img:hover {
@@ -300,43 +320,23 @@ h1 {
     width: 100%;
     height: auto;
     display: block;
+    aspect-ratio: var(--image-ratio, 4 / 5);
     object-fit: cover;
     transform-origin: center;
 }
 
 .collection-card-content {
     padding: 22px 22px 20px;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
     border-top: 1px solid rgba(120, 95, 52, 0.08);
     background: rgba(255, 255, 255, 0.08);
-}
-
-.collection-card h2 {
-    margin: 0 0 10px;
+    transform: scale(1.12);
+    transform-origin: center;
     font-size: 1.2rem;
     line-height: 1.45;
-    letter-spacing: 0.02em;
-    color: var(--ink-strong);
-}
 
-.collection-card h2 a {
-    color: var(--ink-strong);
-    text-decoration: none;
-}
-
-.collection-card h2 a:hover {
-    color: var(--accent-strong);
-}
-
-.collection-card h3 {
-    margin: 0 0 14px;
-    color: var(--muted);
-    font-size: 0.96rem;
-    font-weight: 600;
-    letter-spacing: 0.04em;
-}
-
-.collection-card p {
-    margin: 8px 0;
     color: var(--muted);
     font-size: 0.83rem;
     line-height: 1.8;
@@ -553,6 +553,14 @@ body.detail-page .object-description {
 }
 
 @media (max-width: 640px) {
+    .object-info h1 {
+        font-size: clamp(1.7rem, 7vw, 2.4rem);
+        line-height: 1.08;
+        letter-spacing: -0.05em;
+        max-width: none;
+        white-space: nowrap;
+    }
+
     .page-shell {
         padding-left: 14px;
         padding-right: 14px;
@@ -562,12 +570,52 @@ body.detail-page .object-description {
         padding: 20px 18px 16px;
     }
 
+    h1 {
+        font-size: clamp(2.2rem, 8vw, 3.1rem);
+        letter-spacing: -0.05em;
+        line-height: 1.04;
+        max-width: none;
+    }
+
+    .subtitle {
+        font-size: 0.82rem;
+        line-height: 1.5;
+    }
+
+    .header-badge {
+        font-size: 0.68rem;
+        padding: 8px 10px;
+    }
+
     .collection-search {
         width: 100%;
     }
 
+    #searchInput {
+        font-size: 0.92rem;
+        padding: 14px 0 13px;
+    }
+
+    .filter-buttons button {
+        padding: 9px 12px;
+        font-size: 0.78rem;
+    }
+
     .collection-container {
-        column-count: 1;
+        column-count: 2;
+        column-gap: 12px;
+    }
+
+    .collection-card {
+        margin-bottom: 12px;
+    }
+
+    .collection-card h2 {
+        font-size: 0.92rem;
+    }
+
+    .collection-card p {
+        font-size: 0.72rem;
     }
 
     .results-bar {
@@ -575,15 +623,4 @@ body.detail-page .object-description {
         align-items: flex-start;
     }
 
-    .compact-image-card .collection-card-image {
-        height: 400px;
-    }
-
-    .tall-image-card .collection-card-image {
-        height: 520px;
-    }
-
-    .collection-card:not(.compact-image-card) .collection-card-image {
-        height: 500px;
-    }
 }
