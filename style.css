@@ -2238,7 +2238,7 @@ h1 {
 }
 
 .collection-card:hover {
-    transform: translateY(-8px);
+    transform: none;
     box-shadow: 12px 12px 24px rgba(149, 120, 83, 0.14), -8px -8px 20px rgba(255,255,255,0.8);
 }
 
