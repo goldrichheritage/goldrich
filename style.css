@@ -3315,3 +3315,18 @@ body.detail-page .object-description {
     background: transparent;
     box-shadow: none;
 }
+
+.collection-card-image,
+.collection-card-image img {
+    position: relative;
+    z-index: 5;
+}
+
+.collection-card {
+    position: relative;
+    z-index: 1;
+}
+
+.collection-card:hover {
+    z-index: 20;
+}
