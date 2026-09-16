@@ -2298,17 +2298,9 @@ h1 {
 
 
 .collection-card img:hover {
-    filter: saturate(1.08) contrast(1.03);
+    filter: none;
 }
 
-.collection-card img {
-    width: 100%;
-    height: auto;
-    display: block;
-    aspect-ratio: var(--image-ratio, 4 / 5);
-    object-fit: cover;
-    transform-origin: center;
-}
 
 .collection-card-content {
     padding: 22px 22px 20px;
