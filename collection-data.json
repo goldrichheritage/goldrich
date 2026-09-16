@@ -351,6 +351,29 @@
     },
 
     {
+        "collectionNumber": "GTP001",
+        "name": "错金银高足盖豆",
+        "englishName": "Gold and Silver Inlaid Bronze Covered Dou with High Foot",
+        "type": "Bronze Ware",
+        "period": "Warring States Period",
+        "dimensions": "口径 98mm; 底径 140mm; 高 410mm ; 重 3257g",
+        "collector": "GOH THEAN POH",
+        "image": "images/PHOTO_2026JUL02/古董-65.jpg",
+        "images": [
+            "images/PHOTO_2026JUL02/古董-65.jpg",
+            "images/PHOTO_2026JUL02/古董-61.jpg",
+            "images/PHOTO_2026JUL02/古董-62.jpg",
+            "images/PHOTO_2026JUL02/古董-63.jpg",
+            "images/PHOTO_2026JUL02/古董-64.jpg",
+            "images/PHOTO_2026JUL02/古董-66.jpg",
+            "images/PHOTO_2026JUL02/古董-67.jpg",
+            "images/PHOTO_2026JUL02/古董-68.jpg",
+            "images/PHOTO_2026JUL02/古董-69.jpg"
+        ],
+        "introduction": ""
+    },
+
+    {
         "collectionNumber": "TPS006",
         "name": "宋建窑柿红釉兔毫盏",
         "englishName": "Jian Ware Bowl with Red Glaze and Hare's Fur Pattern",
@@ -555,6 +578,29 @@
             "images/PHOTO_2026SEP09/202608909_古董-127.jpg",
             "images/PHOTO_2026SEP09/202608909_古董-129.jpg",
             "images/PHOTO_2026SEP09/202608909_古董-130.jpg"
+        ],
+        "introduction": ""
+    },
+
+    {
+        "collectionNumber": "TYK001",
+        "name": "跪人双鸟鼓钉纹青铜鼓",
+        "englishName": "Bronze Drum with Kneeling Figures, Paired Birds and Drum-Stud Motifs",
+        "type": "Bronze Ware",
+        "period": "Han Dynasty",
+        "dimensions": "口径 110mm; 底径 124mm; 高 210mm ; 重 1192g",
+        "collector": "TAN YAM KEE@TAN WENG CHIANG",
+        "image": "images/PHOTO_2026JUL02/古董-53.jpg",
+        "images": [
+            "images/PHOTO_2026JUL02/古董-65.jpg",
+            "images/PHOTO_2026JUL02/古董-53.jpg",
+            "images/PHOTO_2026JUL02/古董-54.jpg",
+            "images/PHOTO_2026JUL02/古董-55.jpg",
+            "images/PHOTO_2026JUL02/古董-56.jpg",
+            "images/PHOTO_2026JUL02/古董-66.jpg",
+            "images/PHOTO_2026JUL02/古董-59.jpg",
+            "images/PHOTO_2026JUL02/古董-60.jpg",
+            "images/PHOTO_2026JUL02/古董-58.jpg"
         ],
         "introduction": ""
     },
