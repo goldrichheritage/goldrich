@@ -828,7 +828,7 @@ body:not(:has(.landing-poster)) .collection-card:hover .collection-card-image {
 
 body:not(:has(.landing-poster)) .collection-card:hover .collection-card-image img {
     filter: saturate(1.04);
-    transform: scale(1.025);
+    transform: scale(1.5);
 }
 
 body:not(:has(.landing-poster)) .collection-card-english {
@@ -2687,6 +2687,10 @@ body:not(:has(.landing-poster)) .eyebrow {
     color: #8a6d4b;
     font-size: 12px;
     letter-spacing: 0.15em;
+}
+
+.featured-object-link.is-lower-crop.is-smaller img {
+    transform: translateY(40px) scale(0.7);!important!
 }
 
 body:not(:has(.landing-poster)) .page-header h1,

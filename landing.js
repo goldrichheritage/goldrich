@@ -1,12 +1,14 @@
 const featuredCollectionNumbers = [
     "FDA002",
-    "FDA005",
-    "FDA009",
     "TPS003",
+    "GYC001",
+    "FDA009",
+    "FDA005",
     "TPS015",
-    "TPS028",
+    "TPS028"
 ];
-const lowerCropCollectionNumbers = new Set(["FDA009", "TPS028", "TPS036"]);
+const lowerCropCollectionNumbers = new Set(["FDA009", "TPS028", "GYC001"]);
+const smallerImageCollectionNumbers = new Set(["FDA009", "TPS028", "GYC001"]);
 const rotationInterval = 5200;
 
 const featuredLink = document.getElementById("featuredObjectLink");
@@ -46,7 +48,11 @@ if (featuredLink && featuredImage && featuredIndex && featuredCaption) {
                     featuredCaption.innerHTML = `${object.name}<br>${object.period || object.type}`;
                     featuredLink.classList.toggle(
                         "is-lower-crop",
-                        lowerCropCollectionNumbers.has(object.collectionNumber)
+                    lowerCropCollectionNumbers.has(object.collectionNumber)
+                    );
+                    featuredLink.classList.toggle(
+                        "is-smaller",
+                    smallerImageCollectionNumbers.has(object.collectionNumber)
                     );
                     featuredLink.classList.remove("is-changing");
                 };

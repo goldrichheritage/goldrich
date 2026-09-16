@@ -1,5 +1,50 @@
 [
     {
+        "collectionNumber": "GYC001",
+        "name": "错金银提梁盉",
+        "englishName": "Gold and Silver Inlaid Bronze He with Swing Handle",
+        "type": "Bronze Ware",
+        "period": "Warring States Period",
+        "dimensions": "高 240mm ; 重 2332g",
+        "collector": "GOH YIN CHONG",
+        "image": "images/PHOTO_2026JUL02/古董-36.jpg",
+        "images": [
+            "images/PHOTO_2026JUL02/古董-36.jpg",
+            "images/PHOTO_2026JUL02/古董-39.jpg",
+            "images/PHOTO_2026JUL02/古董-33.jpg",
+            "images/PHOTO_2026JUL02/古董-34.jpg",
+            "images/PHOTO_2026JUL02/古董-35.jpg",
+            "images/PHOTO_2026JUL02/古董-32.jpg",
+            "images/PHOTO_2026JUL02/古董-38.jpg",
+            "images/PHOTO_2026JUL02/古董-37.jpg"
+        ],
+        "introduction": ""
+    },
+
+    {
+        "collectionNumber": "GYC002",
+        "name": "错金银青铜敦",
+        "englishName": "Gold and Silver Inlaid Bronze Dun",
+        "type": "Bronze Ware",
+        "period": "Middle Western Zhou",
+        "dimensions": "高 230mm ; 重 2749g",
+        "collector": "GOH YIN CHONG",
+        "image": "images/PHOTO_2026JUL02/古董-91.jpg",
+        "images": [
+            "images/PHOTO_2026JUL02/古董-91.jpg",
+            "images/PHOTO_2026JUL02/古董-87.jpg",
+            "images/PHOTO_2026JUL02/古董-88.jpg",
+            "images/PHOTO_2026JUL02/古董-89.jpg",
+            "images/PHOTO_2026JUL02/古董-90.jpg",
+            "images/PHOTO_2026JUL02/古董-92.jpg",
+            "images/PHOTO_2026JUL02/古董-95.jpg",
+            "images/PHOTO_2026JUL02/古董-93.jpg",
+            "images/PHOTO_2026JUL02/古董-94.jpg"
+        ],
+        "introduction": ""
+    },
+    
+    {
         "collectionNumber": "FDA001",
         "name": "米白釉刻花缠枝花卉纹梅瓶",
         "englishName": "Cream-Glazed Meiping with Carved Floral Scrolls",

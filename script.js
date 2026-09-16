@@ -195,8 +195,8 @@ function updateCardFocus() {
         const bounds = image.getBoundingClientRect();
         return bounds.top >= 0 && bounds.bottom <= viewportHeight;
     });
-    const focusedCards = fullyVisibleCards.slice(0, 6);
-    const shouldDim = focusedCards.length >=6;
+    const focusedCards = fullyVisibleCards.slice(0, 5);
+    const shouldDim = focusedCards.length >= 5;
 
     cards.forEach(function(card) {
         card.classList.toggle("is-muted", shouldDim && !focusedCards.includes(card));
